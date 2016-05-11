@@ -16,10 +16,11 @@ defmodule Peepchat.Mixfile do
   # Configuration for the OTP application.
   #
   # Type `mix help compile.app` for more information.
+
   def application do
     [mod: {Peepchat, []},
      applications: [:phoenix, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,8 +36,11 @@ defmodule Peepchat.Mixfile do
      {:phoenix_ecto, "~> 2.0"},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 2.4"},
+     {:guardian, "~> 0.10.0"},
      {:cors_plug, "~> 1.1"}]
   end
+
 
   # Aliases are shortcut or tasks specific to the current project.
   # For example, to create, migrate and run the seeds file at once:

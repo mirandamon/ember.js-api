@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+- 1.2
+otp_release:
+- 18.2
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database peepchat_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: mR5s1R7NgqDSFVG6KIJr4OX5DhoWfsQjje4DrCZEEEuECQ5sXwSPfifaUaUjeNcn72FA/Ls1BgPoMl6Cw4ZK56Do8EmAvsdR4Lr0b0jPYs36c7nW6ltoMIiciDgBe/kOYPDs1Atwct068CvXoqIgr+tUL2wlv4kKsHpmuwGuCtYUdgQkssaTyMk5wy9yLSI/xoR5dHEYcYG4SpY7qxawCTtMU8yLqawOZndgHnce4dh7Pt35wmyK69KfimgX84WkD+qVDwgDMgyEHIZkxEKGbTSg5atOdVNrI8yPdIqPk6i2/T0zcJ+y0i7qWiQCeRi6aXzdAqahfU0byZIFAMX/RZdCZdny7sdOxACTGcY8EeU++jXqpIT+prtRiadQpAqcWGchBaACgcaNPmvMCMp+aqYFqJZ7jW35FC50t+fiDczjoCbRg5pY4xV0IBQ935qscBMZwf9MyCTYMFPE0LUBfaknVm7mgzT672luRVMwH69X62eTKea8jEXhoxKOfZisQRE8vB7C2+NBaW8RjGJSnDmBq5Ty05UJEGneu2QUlkGNtiVuv4/K1U2DVzyWQuN9vKb78711ex5IZsAyQIvl3a89JQD8cT4Iix0URHkS7iHTXrhnxLm1LnJlyPd0zq/+VO6iTHYNxv9Mnw1QB8fHnVVsRPa7vq94QizT+5IaR9Y=
+  app: still-woodland-92248
+  on:
+    repo: mirandamon/ember.js-api
